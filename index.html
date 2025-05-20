@@ -21,64 +21,78 @@ Select ONE Additional Feature to Add
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
+    
+   
     <h1>Quiz About [Me]</h1>
+     <img id="catImage" src="https://cdn.glitch.global/1b0c5c99-3d8d-4bbb-a400-d344fe136f3d/images.jpg?v=1747755711706">
+    
     <hr />
     <!-- Movie Question -->
-    <form id="movie-form">
+    <form id="artist-form">
       <label>
-        🎥 What is my favorite movie?
-        <select id="movie-answer">
-          <option value="movie1">movie 1</option>
-          <option value="movie2">movie 2</option>
-          <option value="movie3">movie 3</option>
-          <option value="movie4">movie 4</option>
+        🎥 Who's my favorite artist?
+        <select id="artist-answer">
+          <option value="Artist1">Frank Ocean</option>
+          <option value="Artist2">SZA</option>
+          <option value="Artist3">Khmari</option>
+          <option value="Artist4">Cleo Sol</option>
         </select>
       </label>
-      <button type="submit">Check Movie Answer</button>
+      <button type="submit">Check Artist Answer</button>
     </form>
-    <div id="movie-result"></div>
+    <div id="artist-result"></div>
+     <img id="frankImage" src="https://cdn.glitch.global/1b0c5c99-3d8d-4bbb-a400-d344fe136f3d/1_lfE1NRGhG2uwkAcRNGTq4g%402x.jpg?v=1747754625068">
     <hr />
     <!-- Book Question -->
-    <form id="book-form">
+    <form id="color-form">
       <label>
-        📖 What is my favorite book?
-        <select id="book-answer">
-          <option value="book1">book 1</option>
-          <option value="book2">book 2</option>
-          <option value="book3">book 3</option>
-          <option value="book4">book 4</option>
+         What is my favorite color?
+        <select id="color-answer">
+          <option value="color1">yellow </option>
+          <option value="color2">red</option>
+          <option value="color3">green</option>
+          <option value="color4">pink</option>
         </select>
       </label>
-      <button type="submit">Check Book Answer</button>
+      <button type="submit">Check Color Answer</button>
     </form>
-    <div id="book-result"></div>
+    <div id="color-result"></div>
+     <img id="multiImage" src="https://cdn.glitch.global/1b0c5c99-3d8d-4bbb-a400-d344fe136f3d/6767cd0c0da05a4abb518ea3_green-colors.svg?v=1747755115801">
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
+      $("#frankImage").hide()
+      
       //Movie Question jQuery Code
-      $("#movie-form").on("submit", function (event) {
+      $("#artist-form").on("submit", function (event) {
         event.preventDefault();
 
-        var $answer = $("#movie-answer");
+        var $answer = $("#artist-answer");
         var answer = $answer.val();
 
-        if (answer === "movie1") {
-          $("#movie-result").text("YESSSS!");
+        if (answer === "Artist1") {
+          $("#artist-result").text("YUPPP!");
+          $("#frankImage").slideDown(3000);
+          
         } else {
-          $("#movie-result").text("Try Again!");
+          $("#artist-result").text("nah..try again!");
         }
       });
 
       //Book Question jQuery Code
-      $("#book-form").on("submit", function (event) {
+        $("#multiImage").hide()
+      $("#color-form").on("submit", function (event) {
         event.preventDefault();
+       
 
-        var $answer = $("#book-answer");
+        var $answer = $("#color-answer");
         var answer = $answer.val();
 
-        if (answer === "book1") {
-          $("#book-result").text("YESSSS!");
+        if (answer === "color3") {
+          $("#color-result").text("YESSSS!");
+            $("#multiImage").slideDown(3000);
         } else {
-          $("#book-result").text("Try Again!");
+          $("#color-result").text("Try Again!");
         }
       });
     </script>
